@@ -13,6 +13,7 @@
                 >
                   <img :src="activeItems[0].url" :alt="activeItems[0].name">
                 </v-avatar>
+                <span style="font-size: 60px">{{activeItems[0].name}}</span>
                 <v-avatar
                   :tile="true"
                   :size="avatarSize"
@@ -21,6 +22,7 @@
                 >
                   <img :src="activeItems[1].url" :alt="activeItems[1].name">
                 </v-avatar>
+                <span style="font-size: 60px">{{activeItems[1].name}}</span>
               </v-card-actions>
               <v-slider
                 v-model="slider"

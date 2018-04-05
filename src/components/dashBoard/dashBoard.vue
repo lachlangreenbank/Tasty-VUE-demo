@@ -132,8 +132,8 @@
         })
       },
       twoRandomFoods: function () {
-        let randomNumberOne = Math.floor(Math.random() * 8)
-        let randomNumberTwo = Math.floor(Math.random() * 8)
+        let randomNumberOne = Math.floor(Math.random() * this.foodItems.length)
+        let randomNumberTwo = Math.floor(Math.random() * this.foodItems.length)
 
         if (this.lastNumbers[0] !== randomNumberOne && this.lastNumbers[1] !== randomNumberTwo && randomNumberOne !== randomNumberTwo) {
           this.lastNumbers = [randomNumberOne, randomNumberTwo]
