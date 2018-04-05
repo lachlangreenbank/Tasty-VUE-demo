@@ -22,19 +22,19 @@
             align-center
           >
             <v-flex xs3 sm3 md3>
-              <span style="font-size:50px; margin:20%">Thai</span>
+              <span style="font-size:50px; margin:5%">Thai</span><span style="font-size:20px;">{{foodData.Thai.points}}/100</span>
               <v-progress-linear :value="foodData.Thai.points" height="20" color="success"></v-progress-linear>
             </v-flex>
             <v-flex xs3 sm3 md3>
-              <span style="font-size:50px; margin:20%">Mexican</span>
+              <span style="font-size:50px; margin:5%">Mexican</span><span style="font-size:20px;">{{foodData.Mexican.points}}/100</span>
               <v-progress-linear :value="foodData.Mexican.points" height="20" color="warning"></v-progress-linear>
             </v-flex>
             <v-flex xs3 sm3 md3>
-              <span style="font-size:50px; margin:20%">Burgers</span>
+              <span style="font-size:50px; margin:5%">Burgers</span><span style="font-size:20px;">{{foodData.Burgers.points}}/100</span>
               <v-progress-linear :value="foodData.Burgers.points" height="20" color="error"></v-progress-linear>
             </v-flex>
             <v-flex xs3 sm3 md3>
-              <span style="font-size:50px; margin:20%">Peruvian</span>
+              <span style="font-size:50px; margin:5%">Peruvian</span><span style="font-size:20px;">{{foodData.Peruvian.points}}/100</span>
               <v-progress-linear :value="foodData.Peruvian.points" height="20" color="purple"></v-progress-linear>
             </v-flex>
           </v-layout>
