@@ -7,7 +7,7 @@ https://cool-app-3fa91.firebaseapp.com/
 
 > Rolling your own is as easy as 1, 2, 3
 
-1.Make webpack build
+> 1.Make webpack build
 
 $ npm install -g vue-cli
 $ vue init webpack my-project
@@ -17,11 +17,11 @@ $ npm run dev
 
 https://github.com/vuejs-templates/webpack
 
-Select a base template from Vuetify predefined or build your own
+> 2.Select a base template from Vuetify predefined or build your own
 
 https://vuetifyjs.com/en/layout/pre-defined
 
-Register with firebase for a free hosting, storage and database solution for your prototype
+> 3.Register with firebase for a free hosting, storage and database solution for your prototype
 
 https://firebase.google.com/
 
