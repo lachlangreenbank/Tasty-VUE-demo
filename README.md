@@ -2,6 +2,8 @@
 
 > A Vue.js and Firebase project written in 3 hours
 
+https://cool-app-3fa91.firebaseapp.com/
+
 ## Build Setup
 
 ``` bash
