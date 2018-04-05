@@ -1,0 +1,14 @@
+{
+  "short_name": "Seed bank",
+  "name": "lachlans's Amazing Application ++",
+  "icons": [
+    {
+      "src": "../public/assets/faces/8.png",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ],
+  "start_url": "/home.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
