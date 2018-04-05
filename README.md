@@ -2,7 +2,28 @@
 
 > A Vue.js and Firebase project written in 3 hours
 
+> app DEMO
 https://cool-app-3fa91.firebaseapp.com/
+
+> Rolling your own is as easy as 1, 2, 3
+
+1.Make webpack build
+
+$ npm install -g vue-cli
+$ vue init webpack my-project
+$ cd my-project
+$ npm install
+$ npm run dev
+
+https://github.com/vuejs-templates/webpack
+
+Select a base template from Vuetify predefined or build your own
+
+https://vuetifyjs.com/en/layout/pre-defined
+
+Register with firebase for a free hosting, storage and database solution for your prototype
+
+https://firebase.google.com/
 
 ## Build Setup
 
