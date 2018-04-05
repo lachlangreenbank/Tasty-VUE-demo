@@ -1,6 +1,6 @@
-# seedmap
+# Tasty, facemash for food
 
-> A Vue.js project
+> A Vue.js and Firebase project written in 3 hours
 
 ## Build Setup
 
