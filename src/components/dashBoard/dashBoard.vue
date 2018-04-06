@@ -75,17 +75,17 @@
       FoodPicker
     },
     created: function () {
-      // For keeping scpoe in callbacks
+      // For keeping scope in callbacks
       let self = this
-
+      // define refference to firebase storage
       this.storageRef = firebase.storage().ref()
-
+      // define ref to our firebase object
       let foodItemsRef = 'foodItems'
       this.foodItemsRef = db.ref(foodItemsRef)
 
       let foodDataRef = 'foodData'
       this.foodDataRef = db.ref(foodDataRef)
-
+      // Grab all our food items from firebase once
       this.foodItemsRef.once('value').then(function (snapshot) {
         console.log(snapshot.val())
         self.foodItems = snapshot.val()
@@ -93,7 +93,7 @@
       }, function (errorObject) {
         console.log('The read failed: ' + errorObject.code)
       })
-
+      // Grab and watch all our food team scores from firebase
       this.foodDataRef.on('value', function (snapshot) {
         console.log(snapshot.val())
         self.foodData = snapshot.val()
@@ -103,38 +103,34 @@
         console.log('The read failed: ' + errorObject.code)
       })
     },
-    mounted: function () {
-
-    },
-    watch: {
-    },
-    computed: {
-    },
     methods: {
       applyScoreChange: function (teamUp, teamDown) {
+        // increace score of teamUp and decreace score of teamDown
         console.log(teamUp, teamDown)
+        // Create an object that has matching params of our firebase object
         let updatedScores = {}
         updatedScores[teamUp] = {'points': this.foodData[teamUp].points += 20}
         updatedScores[teamDown] = {'points': this.foodData[teamDown].points -= 20}
-
-        console.log(this.foodData[teamUp].points)
+        // If a team has reached 100 points display winner modal
         if (this.foodData[teamUp].points > 99) {
           this.winnerAnnounce = true
           this.winnningTeam = teamUp
         }
         console.log(updatedScores)
+        // sync our updated scores with our firebase object, foodDataRef path defined in created function
         this.foodDataRef.update(updatedScores, function (err) {
           if (err) {
             console.log(err)
           } else {
-            console.log('Node sucessfully updated')
+            console.log('Scores sucessfully updated')
           }
         })
       },
       twoRandomFoods: function () {
+        // get two pseudo random numbers inbetween 0 and the length of food item array
         let randomNumberOne = Math.floor(Math.random() * this.foodItems.length)
         let randomNumberTwo = Math.floor(Math.random() * this.foodItems.length)
-
+        // Make sure the numbers arent the last ones picked or correspond to items on the same team, if so restart function
         if (this.lastNumbers[0] !== randomNumberOne && this.lastNumbers[1] !== randomNumberTwo && randomNumberOne !== randomNumberTwo) {
           this.lastNumbers = [randomNumberOne, randomNumberTwo]
           if (this.foodItems[randomNumberOne].team !== this.foodItems[randomNumberTwo].team) {
@@ -149,6 +145,7 @@
         }
       },
       choice: function (choice) {
+        // A choice has been emitted from our food picker component
         console.log(choice)
         let teamUp = choice[0].team
         let teamDown = choice[1].team
