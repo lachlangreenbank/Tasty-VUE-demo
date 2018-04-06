@@ -7,7 +7,6 @@
     data: () => ({
     }),
     props: {
-      foodItems: ['foodItems']
     },
     components: {
     },
