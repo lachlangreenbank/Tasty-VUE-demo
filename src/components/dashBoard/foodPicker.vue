@@ -41,8 +41,10 @@
 <script>
   export default {
     data: () => ({
+      // Example of modeling a data value to a component, slider changes the size of the images
       slider: 500
     }),
+    // Array including 2 food items passed from parent
     props: ['activeItems'],
     components: {
     },
@@ -59,6 +61,7 @@
       }
     },
     methods: {
+    // Emit to the parent component the choice that has been made
       chooseItem: function (choice) {
         this.$emit('choice', choice)
       }
